@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Application</title>
+    <script type="text/javascript" src="xml.creator.js"></script>
+    <script>
+        var XML = new XMLCreator();
+        XML.masterNode = XML.createNode('FileList');
+
+        for(var i = 0; i < 10; i++) {
+            var node = XML.createNode(
+                        'File',
+                        [
+                            XML.createNode('name', 'sample' + i + '.txt'),
+                            XML.createNode(
+                                'Inner',
+                                [
+                                    XML.createNode('name', 'sample' + i + '.txt'),
+                                    XML.createNode('option', 'db' + i)
+                                ])
+                        ]);
+            XML.appendNode(XML.masterNode, node);
+            XML.nodes.push(node);
+        }
+        document.write(XML.parseToXML());
+    </script>
+</head>
+<body>
+    <div id="content">
+    </div>
+</body>
+</html>
