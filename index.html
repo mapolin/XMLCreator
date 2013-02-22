@@ -18,7 +18,19 @@
                                 'Inner',
                                 [
                                     XML.createNode('name', 'sample' + i + '.txt'),
-                                    XML.createNode('option', 'db' + i)
+                                    XML.createNode('option', 'db' + i),
+                                    XML.createNode(
+                                        'evenInner',
+                                        [
+                                            XML.createNode('deepName', 'deep-node-'+i ),
+                                            XML.createNode(
+                                                'deep',
+                                                [
+                                                    XML.createNode('soDeep', 'nomore' + i)
+                                                ]
+                                            )
+                                        ]
+                                    )
                                 ])
                         ]);
             XML.appendNode(XML.masterNode, node);
