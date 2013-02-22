@@ -41,7 +41,7 @@ function XMLCreator() {
                 attr: attributes || {} // Attributes of the node - Attributes {} or empty {}
             };
         },
-        // Append(nest) a Node do other Node
+        // Append(nest) a Node to other Node
         // @param{number, node} to - The host Node (either ID or Node)
         // @param{number, node} node - The node to append (either ID or Node)
         appendNode: function(to, node) {
